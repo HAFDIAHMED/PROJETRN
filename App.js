@@ -27,6 +27,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import HomePage from './app/components/homePage/HomePage';
 import Metrics from './app/trash/Metrics';
+import CoronaWorld from './app/components/homePage/CoronaWorld';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -92,7 +93,7 @@ const App: () => Node = () => {
     );
   }
   return (
-   <HomePage/>
+   <CoronaWorld/>
   );
 };
 

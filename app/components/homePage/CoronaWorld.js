@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Platform,Text, View, Image, ScrollView, TextInput ,Dimensions, Alert, TouchableOpacity} from 'react-native';
 import metrics from '../../trash/Metrics';
 function CoronaWorld(props) {
+    const parameter="cases"
     const [Countries , setCountries]=useState([]);
-    const  Tags=['cases','deaths','recovered','tested']
+    const  Tags=['USA','Morocco','UK'];
+    const [Tag,setTag]=useState("tag");
     const GetCountries=async()=>
     {
         try {
@@ -15,8 +17,8 @@ function CoronaWorld(props) {
         }
     }
     useEffect(()=>{
-       GetCountries();
-        console.log(Countries)
+      GetCountries();
+        //console.log(Countries)
     })
     return (
         <View style={styles.container}>
@@ -26,29 +28,26 @@ function CoronaWorld(props) {
                     Tags.map((tags,index)=>{
                         return (
                         <View key={index}>
-                            <TouchableOpacity style={styles.tags_style} >
+                            <TouchableOpacity style={styles.tags_style} onPress={()=>setTag(tags)}>
                                 <Text style={styles.Title_Text}>{tags}</Text>
                             </TouchableOpacity>
                         </View>
                         );
-                        
                     })
                 }
             </ScrollView>
             <ScrollView style={styles.vertical}>
                 {
-                    Countries.map((countries,index)=>{
+                    Countries.filter(world=>world.country===Tag).map((countries,index)=>{
                         return (
                             <View>
                                 <Text> country {countries.country}</Text>
+                                <Text>Total  cases : {countries.cases} </Text>
                             </View>
                         );
                     })
                 }
-            </ScrollView>
-         
-            
-           
+            </ScrollView>         
         </View>
     );
 }
@@ -62,5 +61,5 @@ const styles = StyleSheet.create({
     text_register : {alignSelf:'flex-end',margin : 20,marginHorizontal:60,},
     tags_style:{margin : 10, borderWidth:1,borderRadius:20,padding:10,marginBottom:10,},
     horizontal : {marginTop:80,borderWidth:1,margin : 10,},
-    vertical : {borderWidth:1,}
+    vertical : {borderWidth:1,alignSelf:'center'}
 })

@@ -12,6 +12,8 @@ target 'PROJETRN' do
     :hermes_enabled => false
   )
 
+  pod 'A0Auth0', :path => '../node_modules/react-native-auth0'
+
   target 'PROJETRNTests' do
     inherit! :complete
     # Pods for testing

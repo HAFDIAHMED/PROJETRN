@@ -10,15 +10,12 @@ import { Dimensions } from 'react-native';
 */
 function HomePage(props) {
     useEffect(()=>{
-        let {height, width}=Dimensions.get('window');
-        console.log(
-            height,width
-        )
+       
     })
     return (
        
             <View style={styles.container}>
-            <Text style={styles.text}> text 1 </Text>
+            <Text style={styles.text}> text 1d </Text>
            
             </View>
 

@@ -28,6 +28,8 @@ import {
 import HomePage from './app/components/homePage/HomePage';
 import Metrics from './app/trash/Metrics';
 import CoronaWorld from './app/components/homePage/CoronaWorld';
+import Login from './app/components/authentification/login';
+import Register from './app/components/authentification/register';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -93,7 +95,7 @@ const App: () => Node = () => {
     );
   }
   return (
-   <CoronaWorld/>
+   <Register/>
   );
 };
 

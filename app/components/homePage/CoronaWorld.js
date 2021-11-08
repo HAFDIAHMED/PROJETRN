@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Platform,Text, View, Image, ScrollView, TextInput ,Dimensions, Alert, TouchableOpacity} from 'react-native';
-import metrics from '../../trash/Metrics';
 function CoronaWorld(props) {
     const parameter="cases"
     const [Countries , setCountries]=useState([]);

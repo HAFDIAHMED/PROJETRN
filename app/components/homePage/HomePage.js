@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Platform,Text, View, Image, ScrollView, TextInput ,Dimensions, Alert, TouchableOpacity} from 'react-native';
-import metrics from '../../trash/Metrics';
 import Auth0 from 'react-native-auth0';
 
 //import {height,width} from metrics;

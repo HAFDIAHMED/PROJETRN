@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Platform,Text, View, Image, ScrollView, TextInput ,TouchableOpacity,Dimensions, Alert} from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 
 
 function Register(props) {
-   
+   //const navigation=useNavigation();
     return (
         <View style={styles.container}>
         <Text style={styles.Title_Text}> Register</Text>
@@ -18,13 +19,10 @@ function Register(props) {
     placeholder="passsword"
     />
     </View>
-  
-  
-
     <TouchableOpacity  style={styles.text_register} onPress={()=>
-        console.log("login")
+       console.log("hello")
        }>
-        <Text >Login</Text>
+        <Text >Register</Text>
     </TouchableOpacity>
     
 </View>

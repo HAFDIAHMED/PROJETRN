@@ -26,10 +26,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import HomePage from './app/components/homePage/HomePage';
-import Metrics from './app/trash/Metrics';
 import CoronaWorld from './app/components/homePage/CoronaWorld';
 import Login from './app/components/authentification/login';
 import Register from './app/components/authentification/register';
+
+import Root from './app/components/authentification/root';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -63,6 +64,7 @@ const App: () => Node = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
   const Screen =()=>{
     return (
       <SafeAreaView style={backgroundStyle}>
@@ -95,7 +97,8 @@ const App: () => Node = () => {
     );
   }
   return (
-   <Register/>
+    <Register/>
+    
   );
 };
 

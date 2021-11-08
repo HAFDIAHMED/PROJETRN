@@ -25,8 +25,7 @@ function HomePage(props) {
         0:{username: "user 1",password : 1111},
         1:{username: "user 2",password : 2222}
 
-    }
-   
+    };
     const Login_List=()=>{
         if ( 
             (users[0].username==User.user_name && users[0].password==User.password)||
@@ -37,7 +36,7 @@ function HomePage(props) {
             console.log(User)
             Alert.alert("username os password is incorrect")
         }
-    }
+    };
     const Auth0login =()=>{
         
         auth0.webAuth
@@ -53,10 +52,10 @@ function HomePage(props) {
           .catch(console.error);
       })
       .catch(error => console.log(error));
-    }
+    };
     useEffect(()=>{
         //Auth0login();
-    })
+    });
     return (
        
         <View style={styles.container}>

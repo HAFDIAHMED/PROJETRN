@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Platform,Text, View, Image, ScrollView, TextInput ,TouchableOpacity,Dimensions, Alert} from 'react-native';
-
+//commentjdjd
 
 function Login(props) {
     const users={
         0:{username: "user 1",password : 1111},
         1:{username: "user 2",password : 2222}
 
-    }
-    const [User,setUser]=useState({
+    };
+    const [user,setUser]=useState({
         user_name :"ahmed hafdi",
         password: "password 1"
     });
     const Login_List=()=>{
         if ( 
-            (users[0].username==User.user_name && users[0].password==User.password)||
-            (users[1].username==User.user_name && users[1].password==User.password)
+            (users[0].username==user.user_name && users[0].password==user.password)||
+            (users[1].username==user.user_name && users[1].password==user.password)
         ){
             console.log("register")
         }else {
-            console.log(User)
+            console.log(user)
             Alert.alert("username os password is incorrect")
         }
     }
@@ -27,27 +27,28 @@ function Login(props) {
     useEffect(()=>{
 
 
-    })
+    });
     return (
+        <SafeAreaView>
         <View style={styles.container}>
         <Text style={styles.Title_Text}> Login</Text>
     <View style={styles.input_container}>
     <TextInput 
     placeholder="user name"
-    onChangeText={(text)=>User.user_name=text}
+    onChangeText={(text)=>user.user_name=text}
     />
     </View>
     
     <View style={styles.input_container}>
     <TextInput 
     placeholder="passsword"
-    onChangeText={(text)=>User.password=text}
+    onChangeText={(text)=>user.password=text}
     />
     </View>
     <TouchableOpacity  style={{alignSelf:'center'}} onPress={()=>{
         setUser({
-            user_name:User.user_name,
-            password:User.password,
+            user_name:user.user_name,
+            password:user.password,
         });
         Login_List();
        }}>
@@ -60,8 +61,10 @@ function Login(props) {
        }>
         <Text >Register</Text>
     </TouchableOpacity>
+
     
 </View>
+</SafeAreaView>
     );
 }
 
